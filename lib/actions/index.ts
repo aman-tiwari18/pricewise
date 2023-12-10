@@ -2,7 +2,7 @@
 
 import { connectToDB } from "../mongoose";
 import { scrapeAmazonProduct } from "../scraper";
-
+// Suyash
 export async function scrapeAndStoreProduct(productURL: string) {
     if (!productURL) return;
     try {
