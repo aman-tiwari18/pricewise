@@ -2,7 +2,7 @@
 
 import axios from "axios";
 import * as cheerio from 'cheerio'
-import { extractCurrency, extractDescription, extractPrice } from "../utils";
+import { extractCurrency, extractDescription, extractPrice, getAveragePrice } from "../utils";
 import { json } from "stream/consumers";
 
 export async function scrapeAmazonProduct(url: string) {
@@ -76,9 +76,7 @@ export async function scrapeAmazonProduct(url: string) {
             description,
             lowestPrice: Number(currentPrice) || Number(originalPrice),
             highestPrice: Number(currentPrice) || Number(originalPrice),
-            average: Number(currentPrice) || Number(originalPrice),
-
-
+            averagePrice: Number(currentPrice) || Number(originalPrice),
         }
 
         
